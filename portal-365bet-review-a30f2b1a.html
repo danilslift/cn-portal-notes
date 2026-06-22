@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>365bet · 稳定入口与服务说明</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            background: #f8fafc;
+            color: #1e293b;
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* 深色头图 —— hero */
+        .hero {
+            background: linear-gradient(145deg, #0b1120 0%, #1a2639 100%);
+            padding: 4rem 2rem 3.5rem;
+            text-align: center;
+            color: #e2e8f0;
+            border-bottom: 1px solid #2d3a52;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 60px;
+            background: radial-gradient(ellipse at center, rgba(99, 102, 241, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.75rem;
+            color: #ffffff;
+        }
+
+        .hero h1 span {
+            color: #a5b4fc;
+        }
+
+        .hero .sub {
+            font-size: 1.2rem;
+            max-width: 720px;
+            margin: 0 auto 1.2rem;
+            color: #94a3b8;
+        }
+
+        .hero .meta-badge {
+            display: inline-block;
+            background: rgba(165, 180, 252, 0.12);
+            border: 1px solid #334155;
+            border-radius: 999px;
+            padding: 0.25rem 1.2rem;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            margin-top: 0.5rem;
+        }
+
+        /* 浅色正文区 + 卡片 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            margin: 2.8rem 0;
+        }
+
+        .section-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 1.2rem;
+            color: #0f172a;
+            border-left: 4px solid #6366f1;
+            padding-left: 0.9rem;
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
+            margin: 2rem 0;
+        }
+
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.8rem 1.4rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.06);
+            transition: transform 0.15s ease, box-shadow 0.2s;
+            border: 1px solid #e9edf2;
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 24px rgba(99, 102, 241, 0.08);
+            border-color: #c7d2fe;
+        }
+
+        .card h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #1e293b;
+            margin-bottom: 0.6rem;
+        }
+
+        .card p {
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .card .icon {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .text-block {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 2rem 2rem 2.2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+            border: 1px solid #eef2f6;
+            margin: 2rem 0;
+        }
+
+        .text-block p {
+            margin-bottom: 1rem;
+        }
+
+        .text-block p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 强调色链接 */
+        a {
+            color: #4f46e5;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #4338ca;
+            border-bottom-color: #818cf8;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 1rem 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-item p {
+            color: #475569;
+            font-size: 0.95rem;
+            margin-top: 0.1rem;
+        }
+
+        .bottom-links {
+            margin: 3rem 0 2.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #dce2ea;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem 2.5rem;
+            justify-content: center;
+            font-size: 0.95rem;
+        }
+
+        .bottom-links a {
+            color: #475569;
+            font-weight: 400;
+        }
+
+        .bottom-links a:hover {
+            color: #4f46e5;
+        }
+
+        .footer-note {
+            text-align: center;
+            color: #64748b;
+            font-size: 0.85rem;
+            padding: 1.8rem 0 2.2rem;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 1rem;
+        }
+
+        .footer-note a {
+            font-weight: 400;
+        }
+
+        /* 响应式 */
+        @media (max-width: 640px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .sub {
+                font-size: 1rem;
+            }
+            .section-title {
+                font-size: 1.3rem;
+            }
+            .card-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .text-block {
+                padding: 1.4rem;
+            }
+            .bottom-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HERO -->
+    <header class="hero">
+        <h1>稳定 · <span>365bet</span></h1>
+        <p class="sub">面向日常访问的可靠入口，提供清晰的服务页面说明与常用指引。</p>
+        <span class="meta-badge">持续可用 · 2025</span>
+    </header>
+
+    <!-- 主内容 -->
+    <main class="container">
+
+        <!-- 优势区：卡片 -->
+        <section>
+            <h2 class="section-title">平台特点</h2>
+            <div class="card-grid">
+                <div class="card">
+                    <div class="icon">⚙️</div>
+                    <h3>轻量化访问</h3>
+                    <p>页面结构经过优化，缩短等待时间，适应不同网络环境下的加载需求。</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🛡️</div>
+                    <h3>基本信息聚合</h3>
+                    <p>将常用功能、场景说明与常见问题集中展示，减少反复查找的步骤。</p>
+                </div>
+                <div class="card">
+                    <div class="icon">📡</div>
+                    <h3>服务状态参考</h3>
+                    <p>通过入口稳定性提示与页面版本更新，帮助使用者了解当前可用状态。</p>
+                </div>
+                <div class="card">
+                    <div class="icon">🧩</div>
+                    <h3>场景化引导</h3>
+                    <p>针对不同使用习惯提供差异化的操作说明，使首次接触者更快上手。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 说明区：稳定入口与页面说明 -->
+        <section>
+            <h2 class="section-title">关于入口与页面结构</h2>
+            <div class="text-block">
+                <p>
+                    本页面作为 <a href="https://portal-365bet.com">365bet</a> 的辅助介绍页，主要围绕访问稳定性与内容组织方式展开说明。平台入口采用统一域名，减少中间跳转，便于收藏与日常使用。页面内不设置自动跳转脚本，所有链接行为由使用者主动触发。
+                </p>
+                <p>
+                    在功能分区上，当前版本将核心信息归为“特点概览”、“常见问题摘要”及“底部导航”三大模块。其中“说明区”对平台的服务范围、页面更新频率以及入口选择逻辑进行了概括，帮助使用者建立对站点结构的整体认知。所有描述均基于客观功能，不包含主观承诺或夸大表述。
+                </p>
+                <p>
+                    若需直接访问主服务，可在浏览器地址栏输入 <a href="https://portal-365bet.com">365bet</a> 对应的域名，或通过本页提供的链接直达。建议在网络条件稳定的时段内操作，以获得较流畅的加载体验。
+                </p>
+            </div>
+        </section>
+
+        <!-- FAQ 摘要 -->
+        <section>
+            <h2 class="section-title">常见问题摘要</h2>
+            <div class="text-block" style="padding: 1.2rem 2rem 1.5rem;">
+                <div class="faq-item">
+                    <strong>⬥ 如何确认当前入口是否有效？</strong>
+                    <p>可直接访问 <a href="https://portal-365bet.com">365bet</a> 测试连通性，页面正常加载即表示入口可用。若遇超时，建议稍后重试或检查本地网络。</p>
+                </div>
+                <div class="faq-item">
+                    <strong>⬥ 页面内容多久更新一次？</strong>
+                    <p>介绍页内容按季度或功能变动进行修订，保持说明与实际服务同步。具体更新日期见页面底部。</p>
+                </div>
+                <div class="faq-item">
+                    <strong>⬥ 是否提供多语言界面？</strong>
+                    <p>当前介绍页以中文为主，核心服务界面同样提供中文选项。更多语言支持情况可参考主站的语言切换功能。</p>
+                </div>
+                <div class="faq-item">
+                    <strong>⬥ 遇到链接失效应如何处理？</strong>
+                    <p>请核对域名拼写是否正确，或尝试清除浏览器缓存后重新加载。仍无法解决时可查看站点公告渠道。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 底部链接 -->
+        <section>
+            <div class="bottom-links">
+                <a href="https://portal-365bet.com">365bet</a>
+                <a href="#" style="pointer-events:none; color:#94a3b8; border:none;">服务状态</a>
+                <a href="#" style="pointer-events:none; color:#94a3b8; border:none;">使用指南</a>
+                <a href="#" style="pointer-events:none; color:#94a3b8; border:none;">常见问题</a>
+                <a href="#" style="pointer-events:none; color:#94a3b8; border:none;">更新日志</a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer-note">
+        <span>页面说明 · 基于稳定入口与信息聚合 ·  </span>
+        <a href="https://portal-365bet.com">365bet</a>
+        <span style="margin:0 0.4rem;">· 版本 2025.04</span>
+    </footer>
+
+</body>
+</html>
